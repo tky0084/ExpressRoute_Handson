@@ -107,7 +107,9 @@ Azure Portalで「仮想マシン」を検索し、「作成」を押下する
 ## ExpressRoute (ExpressRoute Circuit) 回線の作成
 <details><summary>詳細を見る</summary><div>
 Azure Portal で ExpressRoute で検索して、ExpressRoute circuitsを押下<br>
+
 ![alt text](/img/image-16.png)<br><br>
+
 
 作成を押下<br>
 ![alt text](/img/image-17.png)<br>
