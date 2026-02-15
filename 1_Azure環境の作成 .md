@@ -29,12 +29,6 @@ IPアドレスタブにて、作成する仮想ネットワークのIP範囲を�
 必要であれば、「サブネットの追加」より、defaultサブネットのIPアドレス範囲を/27にする<br>
 ![alt text](./img/image-5.png)<br><br>
 
-サブネットの追加<br>
-AzureFirewallサブネットの追加<br>
-サブネットの追加→サブネットの種類「Azure Firewall」を選択し、追加する<br>
-※自動でIPアドレス範囲が設定されます。<br>
-![alt text](/img/image-6.png)<br><br>
-
 Virtual Network Gatewayサブネットの追加<br>
 サブネットの追加→サブネットの種類「Virtual Network Gateway」を選択し、追加する<br>
 ※IPアドレス範囲は/27を指定する<br>
@@ -104,38 +98,6 @@ Azure Portalで「仮想マシン」を検索し、「作成」を押下する
 
 ***
 
-## ExpressRoute (ExpressRoute Circuit) 回線の作成
-<details><summary>詳細を見る</summary><div>
-Azure Portal で ExpressRoute で検索して、ExpressRoute circuitsを押下<br>
-
-![alt text](/img/image-16.png)<br><br>
-
-
-作成を押下<br>
-![alt text](/img/image-17.png)<br>
-<br>
-
-基本タブにて、次のように入力する<br>
-
-| 項目 | 入力方法 |
-|:---------|:---------|
-| サブスクリプション |作成したリソースグループが存在するサブスクリプション |
-| リソース グループ | 作成したネットワークが存在するリソースグループ |
-| 回復性 | 標準の回復性 |
-| リージョン | 仮想ネットワークと同じリージョン |
-| 回線名 | ExpressRoute回線の名前 |
-| ポートの種類 | プロバイダー |
-| ピアリングの場所 | Tokyo |
-| プロバイダー | Oracle Cloud FastConnect |
-| 帯域幅 | 50Mbps |
-<br>
-
-![alt text](/img/image-15.png)<br><br>
-
-確認および作成で作成する<br><br>
-
-</div></details>
-
 ### ExpressRouteGatewayのデプロイ
 <details><summary>詳細を見る</summary><div>
 
@@ -162,47 +124,3 @@ Azure Portalで、「Virtual network gateways」と検索し、ExpressRoute gate
 ![alt text](/img/image-14.png)
 
 </div></details>
-
-## ルーティングの設定
-<details><summary>詳細を見る</summary><div>
-rootテーブルの作製
-Azure Portalでルート テーブルを検索し、作成を押下する
-<img width="960" height="516" alt="image" src="https://github.com/user-attachments/assets/b5d31e1d-2aa5-484d-8671-a9cd55e81329" />
-
-以下の通り入力して作成する
-| 項目 | 入力方法 |
-| -- | -- |
-| サブスクリプション | 作成したリソースグループのあるサブスクリプション |
-| リソース グループ | 作成した仮想ネットワークのあるリソースグループ |
-| Name | ルートテーブル名 |
-| Propagate gateway routes | Yes |
-| リージョン | 仮想ネットワークと同じリージョン |
-
-<br>
-
-</div></details>
-
-## ExpressRoutegatewayを経由するルートテーブルの作製
-
-<details><summary>詳細を見る</summary><div>
-
-作製したルートテーブルにて、「設定」→「ルート」より、「追加」を押下し、以下の通り作成する
-※　ネクストホップをHub環境のAzureFirewallに指定します
-| 項目 | 入力方法 |
-| -- | -- |
-| ルート名 | default |
-| 宛先の種類 | IP アドレス |
-| IP アドレス | OCI CloudのIPアドレス範囲 |
-| ネクスト ホップの種類 | 仮想アプライアンス |
-| Propagate gateway routes | No |
-| ネクスト ホップ アドレス | ExpressRoutegatewayのプライベートIPアドレス |
-
-Spoke環境のサブネットにルートテーブルを関連付け
-作製したルートテーブルにて、「設定」→「サブネット」より、「関連付け」を押下し、Spoke環境のVMがあるサブネットを選択してOKする<br>
-<img width="961" height="516" alt="image" src="https://github.com/user-attachments/assets/fe82944b-e74a-414b-acdf-6b80054b4ba4" /><br><br>
-
-この状態でVM内からブラウザでGoogleを開こうとすると、接続できなくなる<br>
-<img width="960" height="516" alt="image" src="https://github.com/user-attachments/assets/26adc189-aae0-4301-b22c-99584c72f670" /><br><br>
-
-</div></details>
-
