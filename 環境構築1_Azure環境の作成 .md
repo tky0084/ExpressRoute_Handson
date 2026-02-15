@@ -1,7 +1,5 @@
 ## ネットワーク環境の作成
 
-<details><summary>詳細を見る</summary><div>
-
 ## リソースグループの作成<br>
 Azure Portalから「リソース グループ」と検索し、「作成」を押下する<br>
 ![alt text](/img/image.png)<br><br>
@@ -9,14 +7,9 @@ Azure Portalから「リソース グループ」と検索し、「作成」を�
 サブスクリプション名、リソースグループ名、作成するリージョンを入力して、作成する<br>
 ![alt text](img/image-1.png)
 
-</div></details>
-
 <br>
 
 ## 仮想ネットワークの作製
-
-<details><summary>詳細を見る</summary><div>
-
 Azure Portalから、「仮想ネットワーク」を検索し、作成を押下する
 ![alt text](img/image-2.png)
 
@@ -37,13 +30,11 @@ Virtual Network Gatewayサブネットの追加<br>
 レビューと作成タブにて、内容に問題なければ「作成」を押下する<br>
 ![alt text](/img/image-8.png)<br><br>
 
-</div></details>
-
 <br>
 
 ## 仮想マシンの作製
 
-<details><summary>詳細を見る</summary><div>
+下記の方法で２台作成する
 
 Azure Portalで「仮想マシン」を検索し、「作成」を押下する
 <img width="960" height="516" alt="image" src="https://github.com/user-attachments/assets/d1d7ce42-8310-48c8-b181-f128d66a7a0b" />
@@ -89,21 +80,18 @@ Azure Portalで「仮想マシン」を検索し、「作成」を押下する
 <img width="960" height="516" alt="image" src="https://github.com/user-attachments/assets/e0640044-79cc-4331-806d-c34023b17f5c" />
 
 自動的にBastionがデプロイされ、接続される<br>
-<img width="960" height="516" alt="image" src="https://github.com/user-attachments/assets/b57e2bf7-ae31-495b-9558-2b56dd1976a2" /><br><br>
-
-
-</div></details>
+<img width="960" height="516" alt="image" src="https://github.com/user-attachments/assets/b57e2bf7-ae31-495b-9558-2b56dd1976a2" /><br>
 
 <br>
+
 
 ***
 
 ### ExpressRouteGatewayのデプロイ
-<details><summary>詳細を見る</summary><div>
-
 Azure Portalで、「Virtual network gateways」と検索し、ExpressRoute gatewaysであることを確認して作成を押下する<br>
-![alt text](/img/image-12.png)<br><br>
+![alt text](/img/image-12.png)<br>
 
+<br>
 
 基本タブにて、次のように入力する
 
@@ -118,9 +106,9 @@ Azure Portalで、「Virtual network gateways」と検索し、ExpressRoute gate
 | 仮想ネットワーク | 作成した仮想ネットワーク |
 <br>
 
-![alt text](/img/image-13.png)<br><br>
+![alt text](/img/image-13.png)<br>
+
+<br>
 
 確認および作成で作成する<br>
 ![alt text](/img/image-14.png)
-
-</div></details>

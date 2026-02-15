@@ -7,7 +7,11 @@
 ***
 
 ## 検証方法<br>
-Azure 環境において、以下のネットワーク構成を作成
+Azure 環境において、以下のネットワーク構成を作成<br>
+※作成方法はこちら
+- [環境構築1_Azure環境の作成]<https://github.com/tky0084/ExpressRoute_Handson/blob/main/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%891_Azure%E7%92%B0%E5%A2%83%E3%81%AE%E4%BD%9C%E6%88%90%20.md>
+- [環境構築2_OCI環境の作成]<https://github.com/tky0084/ExpressRoute_Handson/blob/main/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%892.%20OCI%E7%92%B0%E5%A2%83%E3%81%AE%E4%BD%9C%E6%88%90.md>
+- [環境構築3_閉域回線の接続]<https://github.com/tky0084/ExpressRoute_Handson/blob/main/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%893_%E9%96%89%E5%9F%9F%E5%9B%9E%E7%B7%9A%E3%81%AE%E6%8E%A5%E7%B6%9A.md>
 
 ![alt text](/img/ネットワーク構成図.png)<br>
 
